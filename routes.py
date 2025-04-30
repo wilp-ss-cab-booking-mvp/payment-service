@@ -2,11 +2,10 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
 from models import db, Payment
+from config import BOOKING_SERVICE_URL
 import requests
 
 bp = Blueprint("payment_bp", __name__)
-
-BOOKING_SERVICE_URL = "http://booking:5000"
 
 #/pay – Make a Payment
 @bp.route("/pay", methods=["POST"])
